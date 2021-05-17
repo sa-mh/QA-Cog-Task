@@ -17,8 +17,8 @@ questions:
 need entire structure? eg: networks? subnets? vpc?
 purpose of circleci?
 scale cluster by adding new node pool with new configs just a change in terraform/adding a new role?
-can terraform use existing service account?
-help needed with service accounts, something isnt clicking
+add nodes to pool without destroying cluster?
+
 
 
 doc links:
@@ -29,5 +29,6 @@ kubernetes https://registry.terraform.io/providers/hashicorp/google/latest/docs/
 gke example https://registry.terraform.io/modules/terraform-google-modules/kubernetes-engine/google/latest
 more examples https://www.fairwinds.com/blog/how-to-use-terraform-with-gke-a-step-by-step-guide-to-deploying-your-first-cluster
 name of iam roles for terraform binding https://cloud.google.com/iam/docs/understanding-roles
+cluster ouputs https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/container_cluster
 circleci:
 how it works sort of https://circleci.com/docs/2.0/about-circleci/#:~:text=CircleCI%20runs%20each%20job%20in,integrated%20Slack%20and%20IRC%20notifications.
