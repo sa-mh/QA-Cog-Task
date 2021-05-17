@@ -1,4 +1,4 @@
-variable "role" {
+variable "account_role" {
     description = "role to be added"
 }
 variable "account_id" {
