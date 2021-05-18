@@ -7,41 +7,21 @@ provider "google" {
 module "ci_machine" {
   source = "./vm"
 }
-module "test_cluster" {
-  source = "./gke/cluster"
+module "main_cluster" {
+  source           = "./gke/cluster"
+  cluster_name     = "gke-cluster"
+  cluster_location = "europe-west2-a"
 }
-
-
-
-/* 
-module "test-node-pool" {
-  source = "./gke/node-pool"
+module "first-node-pool" {
+  source        = "./gke/node-pool"
+  pool_name     = "primary-nodes"
+  pool_location = "europe-west2-a"
+  cluster_name  = module.main_cluster.cluster-name
 }
-
-module "terraform_account" {
-  source         = "./service-account/account"
-  new_account_id = "terraform-gke-account"
-  account_name   = "gke_service_account"
+module "second-node-pool" {
+  source        = "./gke/node-pool"
+  pool_name     = "secondary-nodes"
+  pool_location = "europe-west2-a"
+  cluster_name  = module.main_cluster.cluster-name
+  nodes = 3
 }
-
-module "account_roles_container" {
-  source       = "./service-account/roles"
-  account_id   = module.terraform_account.test_name_output
-  account_role = "roles/container.admin"
-}
-module "account_roles_compute" {
-  source       = "./service-account/roles"
-  account_id   = module.terraform_account.test_name_output
-  account_role = "roles/compute.admin"
-}
-module "account_roles_account" {
-  source       = "./service-account/roles"
-  account_id   = module.terraform_account.test_name_output
-  account_role = "roles/iam.serviceAccountAdmin"
-}
-module "account_roles_storage" {
-  source       = "./service-account/roles"
-  account_id   = module.terraform_account.test_name_output
-  account_role = "roles/composer.environmentAndStorageObjectAdmi"
-}
-*/

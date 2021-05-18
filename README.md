@@ -10,15 +10,14 @@ Scale the cluster by adding a new node pool with new configurations
 Create a pipeline with CircleCI
 Discuss some of the best practices when designing and building highly available clusters.
 
-to do:
-add variables
-
 questions:
 need entire structure? eg: networks? subnets? vpc?
 purpose of circleci?
-scale cluster by adding new node pool with new configs just a change in terraform/adding a new role?
-add nodes to pool without destroying cluster?
 
+to do:
+
+add tags and things
+more settings/configurations
 
 
 doc links:
