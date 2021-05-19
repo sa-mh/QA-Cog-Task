@@ -15,6 +15,17 @@ module "subnet" {
   vpc         = module.vpc.vpc-id
 }
 
+module "ssh-firewall" {
+  source         = "./firewall"
+  vpc_id         = module.vpc.vpc-id
+  firewall_name  = "ssh-firewall"
+  firewall_ports = ["22", "80", "443", "8081", "8800"]
+}
+
+module "google_compute_project_metadata" {
+  source = "./ssh_data"
+}
+
 module "ci_machine" {
   source  = "./vm"
   vm_name = "ci-machine"
