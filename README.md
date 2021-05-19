@@ -21,14 +21,17 @@ Discuss some of the best practices when designing and building highly available 
 questions:
 
 need entire structure? eg: networks? subnets? vpc?
+
 purpose of circleci?
 
 to do:
 
 
-add tags and things
+add tags on nodes
 
-more settings/configurations
+start looking at VPC and subnets
+
+email for clarification on circleci
 
 
 doc links:
