@@ -17,3 +17,9 @@ variable "desc" {
     description = "description of the cluster"
     default = "A GKE cluster"
 }
+variable "vpc_name" {
+    description = "The VPC id"
+}
+variable "subnet_name" {
+    description = "The subnet id"
+}
