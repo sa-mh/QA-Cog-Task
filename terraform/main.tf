@@ -11,7 +11,7 @@ module "vpc" {
 
 module "subnet" {
   source      = "./subnet"
-  subnet_name = "eu-west1-subnet"
+  subnet_name = "eu-west2-subnet"
   vpc         = module.vpc.vpc-id
 }
 
