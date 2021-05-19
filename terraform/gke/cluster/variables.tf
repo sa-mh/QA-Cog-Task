@@ -13,3 +13,7 @@ variable "initial_nodes" {
     description = "amount of initial nodes"
     default = 1
 }
+variable "desc" {
+    description = "description of the cluster"
+    default = "A GKE cluster"
+}

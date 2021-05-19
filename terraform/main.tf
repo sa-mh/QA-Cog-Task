@@ -11,17 +11,18 @@ module "main_cluster" {
   source           = "./gke/cluster"
   cluster_name     = "gke-cluster"
   cluster_location = "europe-west2-a"
+  desc = "The first, main cluster"
 }
 module "first-node-pool" {
   source        = "./gke/node-pool"
   pool_name     = "primary-nodes"
-  pool_location = "europe-west2-a"
+  pool_location = module.main_cluster.zone
   cluster_name  = module.main_cluster.cluster-name
 }
 module "second-node-pool" {
   source        = "./gke/node-pool"
   pool_name     = "secondary-nodes"
-  pool_location = "europe-west2-a"
+  pool_location = module.main_cluster.zone
   cluster_name  = module.main_cluster.cluster-name
   nodes = 3
 }
