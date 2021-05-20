@@ -25,13 +25,14 @@ module "ssh-firewall" {
 module "google_compute_project_metadata" {
   source = "./ssh_data"
 }
-
+/*
 module "ci_machine" {
   source  = "./vm"
   vm_name = "ci-machine"
   vpc     = module.vpc.vpc-id
   subnet  = module.subnet.subnet-id
 }
+*/
 module "main_cluster" {
   source           = "./gke/cluster"
   cluster_name     = "gke-cluster"
