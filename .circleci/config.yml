@@ -52,7 +52,7 @@ jobs:
             ls -a
             cd project/terraform
             terraform init
-            terraform apply -auto-approve 2./plans/plan"
+            terraform apply -auto-approve "./plans/plan"
 
 workflows:
   version: 2
