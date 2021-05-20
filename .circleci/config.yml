@@ -11,6 +11,7 @@ jobs:
       - run:
           name: terraform init & plan
           command: |
+            cd terraform
             terraform init
             terraform plan
       - persist_to_workspace:
