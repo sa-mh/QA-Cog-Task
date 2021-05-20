@@ -1,5 +1,5 @@
 provider "google" {
-  #credentials = $gcp_credentials
+  /*#credentials = $gcp_credentials*/
   project     = "qa-cog-task"
   region      = "europe-west2"
 }
