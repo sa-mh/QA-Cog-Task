@@ -2,6 +2,13 @@
 version: 2.1
 
 jobs:
+  auth:
+    docker:
+      - image : google/cloud-sdk
+    steps:
+      - run: |
+          echo $gcp_credentials | gcloud auth activate-service-account --key-file=-
+
   plan-apply:
     working_directory: /terraform
     docker:
