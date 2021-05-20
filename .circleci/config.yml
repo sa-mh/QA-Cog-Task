@@ -34,7 +34,7 @@ jobs:
             ls -a
             cd project/terraform
             terraform init
-            terraform plan
+            terraform plan -out=plan.tf
       - persist_to_workspace:
           root: ~/
           paths: .
@@ -51,7 +51,8 @@ jobs:
             pwd
             ls -a
             cd project/terraform
-            terraform apply -auto-approve
+            terraform init
+            terraform apply -auto-approve "plan.tf"
 
 workflows:
   version: 2
