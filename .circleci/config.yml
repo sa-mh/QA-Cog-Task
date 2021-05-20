@@ -31,17 +31,11 @@ jobs:
             pwd ls -a
             terraform init
             terraform plan
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
 
   apply:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
-      - attach_workspace:
-          at: .
       - run:
           name: terraform
           command: |
@@ -49,10 +43,6 @@ jobs:
             ls
             cd terraform
             terraform apply -auto-approve
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
 
 workflows:
   version: 2
