@@ -3,7 +3,6 @@ version: 2.1
 
 jobs:
   credentials:
-    working_directory: terraform/credentials
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
@@ -11,8 +10,11 @@ jobs:
       - run: 
           name : transfer creds
           command: |           
+            
             echo $gcp_credentials > qa-cog-task-da4e551d7692.json
             pwd
+            ls -a
+            cd ../..
             ls -a
 
   plan-apply:
