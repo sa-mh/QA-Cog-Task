@@ -8,9 +8,9 @@ jobs:
       - run: 
         name : transfer creds
           command: |
-          cd /terraform/credentials
-          echo $gcp_credentials > qa-cog-task-da4e551d7692.json
-          cd .. ..
+            cd /terraform/credentials
+            echo $gcp_credentials > qa-cog-task-da4e551d7692.json
+            cd .. ..
 
   plan-apply:
     working_directory: /terraform
