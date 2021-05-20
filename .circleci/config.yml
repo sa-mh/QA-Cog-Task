@@ -3,6 +3,8 @@ version: 2.1
 
 jobs:
   credentials:
+    docker:
+      - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
       - checkout
       - run: 
@@ -47,6 +49,7 @@ workflows:
   version: 2
   plan_approve_apply:
     jobs:
+      - credentials
       - plan-apply
       - hold-apply:
           type: approval
