@@ -12,7 +12,8 @@ jobs:
           name : transfer creds
           command: |
             echo $gcp_credentials > qa-cog-task-da4e551d7692.json
-            cd .. ..
+            pwd
+            ls -a
 
   plan-apply:
     docker:
