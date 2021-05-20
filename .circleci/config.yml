@@ -56,7 +56,7 @@ workflows:
   plan_approve_apply:
     jobs:
       - credentials
-      - plan-apply
+      - plan-apply:
           type: approval
           requires:
             - credentials
