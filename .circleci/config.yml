@@ -57,9 +57,11 @@ workflows:
     jobs:
       - credentials
       - plan-apply:
+          type: approval
           requires:
             - credentials
       - hold-apply:
+          type: approval
           requires:
             - plan-apply
       - apply:
