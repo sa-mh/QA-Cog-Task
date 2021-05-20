@@ -23,6 +23,7 @@ jobs:
           name: terraform init & plan
           command: |
             pwd
+            ls -a
             terraform init
             terraform plan
       - persist_to_workspace:
