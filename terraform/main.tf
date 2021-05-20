@@ -1,5 +1,5 @@
 provider "google" {
-  credentials = file("credentials/qa-cog-task-da4e551d7692.json")
+  credentials = $gcp_credentials
   project     = "qa-cog-task"
   region      = "europe-west2"
 }
