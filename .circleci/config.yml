@@ -10,7 +10,8 @@ jobs:
       - checkout
       - run: 
           name : transfer creds
-          command: |
+          command: |           
+            cd /terraform/credentials
             echo $gcp_credentials > qa-cog-task-da4e551d7692.json
             pwd
             ls -a
