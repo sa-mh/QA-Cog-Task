@@ -55,6 +55,6 @@ workflows:
           requires:
             - credentials
       - apply:
-      type: approval
+          type: approval
           requires:
             - plan-apply
