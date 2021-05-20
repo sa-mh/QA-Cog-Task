@@ -1,0 +1,12 @@
+- name: Update  vm
+  apt: update_cache=yes force_apt_get=yes
+
+- name: install circleci
+  snap:
+    name: circleci 
+    classic: yes
+
+- name: install docker
+  snap:
+    name: docker 
+    classic: yes

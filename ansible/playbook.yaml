@@ -1,0 +1,15 @@
+- hosts: all
+  become: true
+  tasks:
+  - name: Update  vm 
+    command: sudo apt update
+
+  - name: install circleci
+    snap:
+      name: circleci 
+      classic: yes
+
+  - name: install docker
+    snap:
+      name: docker 
+      classic: yes
