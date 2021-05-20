@@ -19,7 +19,7 @@ jobs:
             ls
       - persist_to_workspace:
           root: ~/
-          paths: project.terraform
+          paths: project/terraform
 
   plan-apply:
     docker:
@@ -34,7 +34,7 @@ jobs:
             terraform plan
       - persist_to_workspace:
           root: ~/
-          paths: project.terraform
+          paths: project/terraform
 
   apply:
     docker:
