@@ -52,7 +52,8 @@ jobs:
             ls -a
             cd project/terraform
             terraform init
-            terraform apply -auto-approve tfplan
+            terraform plan
+            terraform apply -auto-approve
 
 workflows:
   version: 2
