@@ -36,7 +36,8 @@ jobs:
             terraform init
             terraform plan
       - persist_to_workspace:
-          root: .
+          root: ~/
+          paths: .
 
   apply:
     docker:
