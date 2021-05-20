@@ -1,7 +1,7 @@
-terraform/credentials
 terraform/.terraform
 terraform/.terraform.lock.hcl
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 terraform.tfstate
 ansible/inventory.conf
+terraform/credentials/qa-cog-task-da4e551d7692.json

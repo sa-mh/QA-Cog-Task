@@ -2,13 +2,12 @@
 version: 2.1
 
 jobs:
-  auth:
-    docker:
-      - image : google/cloud-sdk
+  credentials:
     steps:
       - run: |
-          echo $gcp_credentials | gcloud auth activate-service-account --key-file=-
-          gcloud auth application-default login
+          cd /terraform/credentials
+          echo $gcp_credentials > qa-cog-task-da4e551d7692.json
+          cd .. ..
 
   plan-apply:
     working_directory: /terraform
