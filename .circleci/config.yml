@@ -14,9 +14,13 @@ jobs:
             echo $gcp_credentials > qa-cog-task-da4e551d7692.json
             pwd
             ls -a
-            cd ../..
+            cd ..
             pwd
             ls
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 
   plan-apply:
     docker:
@@ -27,13 +31,13 @@ jobs:
           command: |
             pwd
             ls -a
-            cd terraform
-            pwd
-            ls -a
             terraform init
             terraform plan
-            cd ..
-
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+            
   apply:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
