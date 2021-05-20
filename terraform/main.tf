@@ -52,5 +52,5 @@ module "second-node-pool" {
   pool_name     = "secondary-nodes"
   pool_location = module.main_cluster.zone
   cluster_name  = module.main_cluster.cluster-name
-  nodes         = 3
+  nodes         = 2
 }
