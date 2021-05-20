@@ -28,19 +28,21 @@ jobs:
             pwd
             ls -a
             cd terraform
-            pwd ls -a
+            pwd
+            ls -a
             terraform init
             terraform plan
+            cd ..
 
   apply:
     docker:
       - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
     steps:
       - run:
-          name: terraform
+          name: terraform apply
           command: |
             pwd
-            ls
+            ls -a
             cd terraform
             terraform apply -auto-approve
 
@@ -50,13 +52,9 @@ workflows:
     jobs:
       - credentials
       - plan-apply:
-          type: approval
           requires:
             - credentials
-      - hold-apply:
-          type: approval
+      - apply:
+      type: approval
           requires:
             - plan-apply
-      - apply:
-          requires:
-            - hold-apply
